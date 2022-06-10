@@ -100,9 +100,9 @@ pipeline {
                     steps {
                         sh 'aws eks --region ap-south-1 update-kubeconfig --name WIM-test'
                         sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config get ns'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/namespace.yaml'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/pg-deployment.yaml'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/strapi-deployment.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/namespace.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/pg-deployment.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/strapi-deployment.yaml'
 
                     }
                 }
@@ -114,7 +114,7 @@ pipeline {
                         sh 'aws eks --region ap-south-1 update-kubeconfig --name WIM-dev'
                         sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config get ns'
                         sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/namespace.yaml'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/pg-deployment.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/pg-statefulset.yaml'
                         sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/strapi-deployment.yaml'
 
                     }
@@ -126,9 +126,9 @@ pipeline {
                     steps {
                         sh 'aws eks --region ap-south-1 update-kubeconfig --name WIM-demo'
                         sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config get ns'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/namespace.yaml'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/pg-deployment.yaml'
-                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f /kubernetes/strapi-deployment.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/namespace.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/pg-deployment.yaml'
+                        sh 'kubectl --kubeconfig=/var/lib/jenkins/.kube/config apply -f kubernetes/strapi-deployment.yaml'
 
                     }
                 }
