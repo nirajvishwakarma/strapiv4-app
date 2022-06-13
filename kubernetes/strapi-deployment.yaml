@@ -20,7 +20,7 @@ data:
   DATABASE_HOST: "postgres "
   DATABASE_NAME: "strapi"
   DATABASE_PORT: "5432"
-  database_url: postgres
+  database_url: a793e7a02a80a43ee89a29c4192fa668-906322978.ap-south-1.elb.amazonaws.com
 
 ---
 
